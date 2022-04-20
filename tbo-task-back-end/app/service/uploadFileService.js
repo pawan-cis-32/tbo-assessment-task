@@ -11,11 +11,7 @@ const multer = Multer({
 
 const imageConfigStorage = Multer.diskStorage({
     destination: function (req, file, cb) {
-       
         cb(null, './public/uploads/')
-        
-
-
     },
     filename: function (req, file, cb) {
         var datetimestamp = Date.now();
@@ -23,7 +19,6 @@ const imageConfigStorage = Multer.diskStorage({
         var name = file.originalname.split('.')[0]
         file.originalname = name.replace(/[^a-zA-Z0-9]/g, '_');
 
-       
         if (file.mimetype == 'image/png' || file.mimetype == 'uploads/png')
             cb(null, `${file.originalname.split('.')[0]}_${datetimestamp}.png`)
         else
@@ -32,12 +27,10 @@ const imageConfigStorage = Multer.diskStorage({
     }
 });
 
-export default class MulterService {
+export default class UploadFileService {
     static uploadImage(req, res) {
-      
         return new Promise((resolve, reject) => {
             try {
-
                 let uploadSingle = Multer({ storage: imageConfigStorage }).single('file');
                 uploadSingle(req, res, (err) => {
                     if (!req.file)

@@ -1,6 +1,7 @@
 # tbo-assessment-task
 Created web app to calculate sum,average and standard deviation from csv file.
 
+# Created multiple csv files for Manual testing.
 # Please install npm , node js first if they are not installed on your PC.
 
 

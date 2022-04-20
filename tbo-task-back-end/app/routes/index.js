@@ -1,39 +1,8 @@
-import initUserRoutes from './userRoutes';
-import initUtilityRoutes from './utilityRoutes';
-import express from 'express';
-import { path, join } from 'path';
-
-
+import initCalculationFromFileRoutes from './calculationFileRoutes.js';
 
 
 const initRoutes = (app) => {
-  app.use(`/user`, initUserRoutes());
-  app.use(`/utility`, initUtilityRoutes());
-
-
-
-
-  // Catch all other routes and return the index file
-  // app.get('*', (req, res) => {
-  //   res.sendFile(path.join(__dirname, '/../public/dist/yucreat/index.html'));
-  // });
- 
-  //const DIST_FOLDER = join(process.cwd(), 'dist');
-
-  //app.get('*.*', express.static(join(DIST_FOLDER, 'browser')));
-
-  // return rendered '*' or '/*' index.html on every request
- /* app.get('*', (req, res) => {
-    require('zone.js/dist/zone-node');
-    require('reflect-metadata');
-    res.render('index.html', { req, res });
-    //console.log(`new GET request at : ${req.originalUrl}`);
-  });
-
-  // Catch all other routes and return the index file
-  app.get('/admin', (req, res) => {
-    res.sendFile(path.join(__dirname, '/../public/admin/dist/index.html'));
-  });*/
+  app.use(`/uploadFile`, initCalculationFromFileRoutes());
  };
 
 export default initRoutes;
