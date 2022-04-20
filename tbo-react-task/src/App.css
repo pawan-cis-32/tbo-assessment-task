@@ -1,0 +1,21 @@
+
+
+
+/* 
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+} */
+
+.upload-csv-box {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  margin-top: 65px;
+}
+
+.calculated-list {
+  margin-top: 60px;
+}
